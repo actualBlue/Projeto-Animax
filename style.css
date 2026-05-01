@@ -668,7 +668,7 @@ div.anime-list-rate, .anime-list-simi, .anime-area-parecidos .anime-list-simi {
 
     #descricao {
         width: auto;
-        max-width: calc(60% - 120px);
+        max-width: calc(90% - 120px);
     }
 
     div.botoes {
