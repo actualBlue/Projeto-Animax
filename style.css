@@ -41,7 +41,7 @@ body {
    max-width: 100%;
    padding: 18px 60px;
    
-   border-bottom: 1px solid #8a8a8a;
+   border-bottom: 1px solid var(--branco);
 }
 
 .navegar {
@@ -53,7 +53,7 @@ body {
 }
 
 .nav-links > a {
-    color: white;
+    color: var(--branco);
     text-decoration: none;
 
     padding: 8px 10px;
@@ -103,42 +103,40 @@ div.nav-actions {
 }
 
 .search-box input::placeholder {
-    color: #8a8a8a;
+    color: var(--cinza);
 }
 
 .search-box button {
     background: transparent;
     border: none;
-    color: #888;
+    color: var(--cinza);
     cursor: pointer;
     font-size: 14px;
     padding: 0;
 }
 
 .search-box button:hover {
-    color: white;
+    color: var(--branco);
 }
 
-
-
 .navegar > a {
-    color: white;
+    color: var(--branco);
     text-decoration: none;
 }
 
 .nav-actions > .btn-login {
-    background-color: black;
-    color: rgb(255, 255, 255);
+    background-color: var(--preto);
+    color: var(--branco);
 
     border-radius: 6px;
-    border: 1px solid rgb(82, 82, 82);
+    border: 1px solid var(--cinza);
     height: 34px;
     width: 85px;
 }
 
 .nav-actions > .btn-criar {
-    background-color: white;
-    color: black;
+    background-color: var(--branco);
+    color: var(--preto);
 
     border-radius: 6px;
     
@@ -150,9 +148,13 @@ div.nav-actions {
 /* CORPO */
 
 section.destaques {
-    background: rgb(87, 87, 87);
     height: 395px;
     width: 92%;
+
+    border-right: 1px solid var(--branco);
+    border-left: 1px solid var(--branco);
+    border-bottom: 1px solid var(--branco);
+    
 
     border-radius: 0px 0px 9px 9px;
 
@@ -191,10 +193,10 @@ section.destaques::before {
 }
 
 span.tag {
-    color: white;
-    background-color: black;
-    border-radius: 100px;
-
+    color: var(--branco);
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 7px;
+    
     padding: 2px 6px;
 
     position: absolute;
@@ -416,7 +418,7 @@ div.section-header > a:hover {
 }
 
 div.anime-list {
-    margin-top: 10px;
+    margin-top: 20px;
    
     width: 100%;
     height: 130px;
@@ -439,15 +441,6 @@ div.anime-list {
 
     position: relative;
     overflow: hidden;
-}
-
-.anime-card-trending h3 {
-    position: absolute;
-    left: 130px;
-    bottom: 60px;
-
-    color: var(--branco);
-    font-size: 16px;
 }
 
 
@@ -496,7 +489,7 @@ div.section-news-header > a:hover {
 }
 
 div.anime-list-news {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
     
 
@@ -552,9 +545,7 @@ section.anime-area-rate, section.anime-area-parecidos {
     color: var(--branco);
 
     width: 100%;
-    padding-top: 0;
-    margin: 0;
-
+    
 }
 
 .section-rate-title, .section-simi-title {
@@ -797,18 +788,27 @@ div.anime-list-news::-webkit-scrollbar {
 
 .section-rate-title, .section-simi-title {
     text-align: left;
-    width: 100%;
+    width: auto;
 }
 
 .section-rate-title h2, .section-simi-title h2 {
-    font-size: 28px;
+    font-size: 24px;
     text-align: left;
     white-space: nowrap;
 }
 
-.section-rate-link, .section-simi-link {
+.section-rate-link {
     position: absolute;
-    top: 4px;
+    top: 6px;
+    right: 0;
+
+    width: auto;
+    margin-top: 0;
+    text-align: right;
+}
+.section-simi-link {
+position: absolute;
+    top: 6px;
     right: 0;
 
     width: auto;
@@ -817,6 +817,18 @@ div.anime-list-news::-webkit-scrollbar {
 }
 
 .section-rate-link a, .section-simi-link a {
-    font-size: 18px;
+    font-size: 17px;
         }
+
+        @media (max-width: 600px) {
+    .section-news-header h2,
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .section-news-header a,
+    .section-header a {
+        font-size: 17px;
+    }
+}
     }
