@@ -435,7 +435,7 @@ div.anime-list-news {
     border-radius: 5px;
 }
 
-/* MAIORES AVALAIDOS + PARECIDOS COM VOCE */ 
+/* DIVISÃO ENTRE CATEGORIAS */ 
 
 .rate-row {
     position: relative;
@@ -465,7 +465,7 @@ div.anime-list-news {
     opacity: 0.5;
 }
 
-/* MELHORES AVALIADOS */
+/* MELHORES AVALIADOS + PARECIDOS COM VOCE */
 
 
 section.anime-area-rate, section.anime-area-parecidos {
@@ -501,6 +501,10 @@ section.anime-area-rate, section.anime-area-parecidos {
     text-underline-offset: 5px;
 }
 
+.section-rate-link a:hover, .section-simi-link a:hover {
+    color: var(--branco);
+}
+
 .section-rate-link, .section-simi-link {
     color: var(--branco);
 }
@@ -529,123 +533,9 @@ div.anime-list-rate, .anime-list-simi, .anime-area-parecidos .anime-list-simi {
 
 /* PARECIDOS COM VOCE */
 
-/* 
-.anime-area-parecidos {
-    color: var(--branco);
-    width: fit-content;
-    padding-top: 10px;
-
-    margin-left: -107px;
-
-}
-
-.anime-area-parecidos .section-simi-title {
-    width: 768px;
-
-    text-align: center;
-}
-
-.section-simi-title,
-.section-simi-link {
-    width: 864px;
-    text-align: center;
-}
-
-.anime-area-parecidos .section-simi-link {
-    width: 572px;
-    margin-top: 5px;
-    margin-left: 126px;
-    
-    text-align: center;
-}
-
-.section-simi-link a {
-    color: var(--cinza);
-    text-decoration: underline var(--branco);
-    text-underline-offset: 5px;
-}
-
-.right-link {
-    justify-content: flex-start;
-}
-
-.anime-area-parecidos .anime-list-simi {
-    display: flex;
-    gap: 16px;
-
-    width: fit-content;
-    height: 130px;
-
-    margin-top: 10px;
-    margin-left: 30px;
-}
-
-.anime-list-simi {
-    display: flex;
-    gap: 16px;
-
-    width: fit-content;
-    height: 130px;
-
-    margin-top: 10px;
-}
-
-.anime-card-simi {
-    width: 180px;
-    height: 130px;
-
-    background-color: var(--branco);
-    border: 2px solid var(--cinza);
-    border-radius: 5px;
-
-    flex-shrink: 0;
-
-    
-}
 
 
-/* LINHA DIVISORIA 
-
-.divisoria-rate {
-    width: 1px;
-    height: 150px;
-
-    background-color: var(--cinza);
-    
-    margin-top: 66px;
-    margin-bottom: ;
-    margin-left: 116px;
-    margin-right: 126px;
-    flex-shrink: 0;
-
-    
-}
-
-div.section-similar-header {
-    display: flex;
-    align-items: center;
-
-    width: 572px;
-    padding: 0;
-    margin: 0;
-}
-
-div.section-similar-header > h2 {
-    margin: 0;
-    padding: 0;
-
-    color: var(--branco);
-    margin-top: 5px;
-}
-
-.simi-link-right {
-    display: flex;
-    justify-content: flex-start;
-
-    margin-top: -3px;
-    margin-bottom: 12px;
-}
-*/
+/* Responsividade */
 
 @media (max-width: 900px) {
     .rate-row {
