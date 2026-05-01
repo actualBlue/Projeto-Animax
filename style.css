@@ -8,11 +8,23 @@
     
 }
 
+html {
+    width: 100%;
+    max-width: 100%;
+    
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    
+}
+
     /* DESKTOP */
 
 body {
     background-color: var(--cinzafundo);
-
     
 }
 
@@ -147,6 +159,35 @@ section.destaques {
     margin: auto;
 
     position: relative;
+
+    /* CARROSSEL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+    transition: background-image 0.6s ease-in-out;
+}
+
+section.destaques::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.90) 0%,
+        rgba(0, 0, 0, 0.75) 32%,
+        rgba(0, 0, 0, 0.35) 65%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+
+    z-index: 0;
+}
+
+.section.destaques > * {
+    position: relative;
+    z-index: 1;
 }
 
 span.tag {
@@ -218,10 +259,21 @@ span#avaliacao {
 }
 
 div.generos {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    position: absolute;
+    top: 155px;
+    left: 64px;
+}
+
+.genero-item {
     background-color: var(--cinzaescuro);
     color: var(--cinza);
 
-    width: fit-content;
     min-width: 65px;
     height: 30px;
 
@@ -230,13 +282,7 @@ div.generos {
     justify-content: center;
 
     padding: 0 12px;
-
     border-radius: 5px;
-
-    position: absolute;
-    top: 155px;
-    left: 64px;
-
 }
 
 #descricao {
@@ -249,8 +295,10 @@ div.generos {
     left: 64px;
 
     line-height: 1.7;
-
     width: 390px;
+
+    color: var(--branco);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 div.botoes {
@@ -299,7 +347,16 @@ div.botoes > .btn-secundario {
     -webkit-appearance: none;
 
 }
+/* CARROSSEL CARDS */
 
+.card-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.card-arrow {
+    display: none;
+}
 
 /* EM ALTA */
 
@@ -309,6 +366,18 @@ section.anime-section-trending {
     margin: 0 auto;
 
 }
+/* CARROSSEL EM ALTA */
+    .card-carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+/* EM ALTA */
 
 div.section-header {
     display: flex;
@@ -364,12 +433,23 @@ div.anime-list {
     width: 100%;
     height: 130px;
 
-    background-color: var(--branco);
+    background-color: var(--preto);
     border: 2px solid var(--cinza);
     border-radius: 5px;
 
-    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
+
+.anime-card-trending h3 {
+    position: absolute;
+    left: 130px;
+    bottom: 60px;
+
+    color: var(--branco);
+    font-size: 16px;
+}
+
 
 /* LANÇAMENTOS */
 
@@ -417,8 +497,8 @@ div.section-news-header > a:hover {
 
 div.anime-list-news {
     margin-top: 10px;
-
     width: 100%;
+    
 
 
     display: grid;
@@ -530,15 +610,213 @@ div.anime-list-rate, .anime-list-simi, .anime-area-parecidos .anime-list-simi {
     border-radius: 5px;
 }
 
-
-/* PARECIDOS COM VOCE */
-
-
-
 /* Responsividade */
 
-@media (max-width: 900px) {
-    .rate-row {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    /* HEADER */
+
+    .Cabeçalho {
+        padding: 16px 24px;
+        width: 100%;
+        overflow: hidden;
     }
+
+    .navegar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .search-box {
+        order: 2;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .nav-actions {
+        order: 4;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    /* BANNER */
+
+    section.destaques {
+        width: 92%;
+        height: 445px;
+        overflow: hidden;
+    }
+
+    h1#titulo {
+        font-size: 34px;
+        max-width: calc(100% - 120px);
+    }
+
+    #descricao {
+        width: auto;
+        max-width: calc(60% - 120px);
+    }
+
+    div.botoes {
+        flex-wrap: wrap;
+    }
+
+    /* DIVISORIA */
+
+    .rate-row {
+    width: 92%;
+    margin: 25px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
+
+.rate-row::before {
+    display: none;
+}
+
+
+/* CARDS */
+section.anime-section-trending, section.anime-area-news {
+    width: 92%;
+}
+
+div.anime-list, div.anime-list-news {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    padding: 0px;
+    height: 130px;
+}
+
+div.anime-list::-webkit-scrollbar, div.anime-list-news::-webkit-scrollbar {
+    display: none;
+}
+
+.anime-card-trending, .anime-card-launch {
+    
+    max-width: 53%;
+    height: 115px;
+
+    flex-shrink: 0;
+
+    scroll-snap-type: start;
+}
+
+
+/* CARROSSEL (EM ALTA) */
+
+div.anime-list,
+div.anime-list-news {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    padding: 0;
+    height: 130px;
+}
+
+div.anime-list::-webkit-scrollbar,
+div.anime-list-news::-webkit-scrollbar {
+    display: none;
+}
+
+.anime-card-trending,
+.anime-card-launch {
+    flex: 0 0 53%;
+    max-width: 49%;
+    height: 130px;
+}
+
+.carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 55px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    color: var(--branco);
+
+    font-size: 32px;
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+/* MELHORES AVALIADOS + PARECIDOS COM VOCÊ */
+
+.anime-area-rate, .anime-area-parecidos {
+    position: relative;
+}
+
+.section-rate-title, .section-simi-title {
+    text-align: left;
+    width: 100%;
+}
+
+.section-rate-title h2, .section-simi-title h2 {
+    font-size: 28px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.section-rate-link, .section-simi-link {
+    position: absolute;
+    top: 4px;
+    right: 0;
+
+    width: auto;
+    margin-top: 0;
+    text-align: right;
+}
+
+.section-rate-link a, .section-simi-link a {
+    font-size: 18px;
+        }
+    }
