@@ -242,13 +242,21 @@ main > p {
 }
 
 @media (max-width: 768px) {
-    html, body {
+     html, body {
         height: auto;
-        min-height: 100vh;
+        min-height: 100dvh;
+
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
+
     body {
-        overflow-y: auto;
+        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
     }
 }

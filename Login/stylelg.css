@@ -227,3 +227,8 @@ main > p {
     font-size: 12px;
 }
 
+@media (max-width: 768px) {
+    body {
+        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+    }
+}

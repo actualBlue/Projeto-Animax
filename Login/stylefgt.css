@@ -15,14 +15,13 @@
 
 html, body {
     height: 100%;
-
     overflow: hidden;
 }
 
 body {
     height: 100vh;
     overflow: hidden;
-    
+
     background: url(imagens/fundo-pc.png) center center / cover no-repeat;
 
     display: flex;
@@ -198,7 +197,11 @@ main > p {
     font-size: 12px;
 }
 
-
+@media (max-width: 768px) {
+    body {
+        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+    }
+}
 
 
 
