@@ -10,3 +10,7 @@ botoesOlho.forEach((olho) => {
         olho.classList.toggle("fa-eye-slash");
     });
 });
+
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+})

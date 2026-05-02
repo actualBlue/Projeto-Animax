@@ -254,9 +254,10 @@ main > p {
     body {
         background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
+        justify-content: flex-start;
+        
+        min-height: 100dvh;
+        overflow-x: hidden;
+        
     }
 }
