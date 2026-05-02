@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animax</title>
+    <link rel="stylesheet" href="stylelg.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+        <h1 id="titulo">ANIMAX</h1>
+
+    <main>
+        <div>
+            <img src="imagens/logo.png" alt="" id="logo">
+        </div>
+        <h2>Entrar</h2>
+        <p id="desc">Acesse sua conta para continuar</p>
+
+        <form action="" method="post" autocomplete="on">
+            <div class="input-group">
+
+                <label for="iemail">Email</label>
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input type="email" name="email" id="iemail" autocomplete="email" required placeholder="Email">
+
+                <br>
+
+                <label for="isenha">Senha</label>
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password" name="senha" id="isenha" autocomplete="current-password" required placeholder="Senha">
+
+                    <i class="fa-regular fa-eye toggle-password eye-senha" data-target="isenha"></i>
+
+                    <p class="forgot-area">
+                        <a href="forgot.html" class="forgot-password">Esqueceu sua senha?</a>
+                    </p>
+
+                    <button type="submit">
+                    ENTRAR
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+            </div>
+            </form>
+
+            <section class="divisao">
+                <div></div>
+                <p>ou</p>
+                <div></div>
+            </section>
+
+            <p>Ainda não tem uma conta? <a href="register.html">Criar conta</p></a>
+    </main>
+    <p id="copyright">© 2026 Animax. Todos os direitos resevados.</p>
+
+    <script src="scriptlg.js"></script>
 </body>
 </html>
