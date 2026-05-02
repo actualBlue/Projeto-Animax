@@ -1,0 +1,190 @@
+:root {
+    --branco: #ffffff;
+    --preto: #0e0e0e;
+    --preto-alt: #070706;
+    --cinza: #8a8a8a;
+    --cinzaescuro: #292929;
+    --cinzafundo: #181818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+
+    background: url(imagens/fundo-pc.png) center center / cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.auth-page {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    background-color: #070706;
+    color: var(--branco);
+
+    border: 1px solid var(--branco);
+
+    width: 440px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    margin-top: -70px;
+
+    transform: scale(0.80);
+}
+
+h1#titulo {
+    color: var(--branco);
+    font-size: 44px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+div > #logo {
+    width: 30%;
+    margin-bottom: 8px;
+}
+
+main > h2 {
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+main > p#desc {
+    margin-bottom: 2px;
+    padding-top: 5px;
+
+    color: var(--cinza);
+}
+
+form  {    
+    width: 85%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.code-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.code-box input {
+    width: 55px;
+    height: 65px;
+
+    background-color: var(--preto);
+    color: var(--branco);
+
+    border: 1px solid var(--cinza);
+    border-radius: 6px;
+
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+
+    outline: none;
+
+    margin: 5px auto 25px;
+}
+
+.code-box input:focus {
+    border-color: var(--branco);
+    box-shadow: 0 0 8px #ffffff55;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+
+    background-color: #070706;
+    color: var(--branco);
+
+    border: 1px solid var(--branco);
+    border-radius: 5px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    
+}
+
+
+.fa-arrow-right {
+    position: absolute;
+    left: 84%;
+    top: 79%;
+    
+}
+
+main > p:last-child {
+    color: var(--cinza);
+}
+
+main > p > a {
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main > p {
+    padding-bottom: 10px;
+}
+
+#copyright {
+   color: var(--cinza);
+    text-align: center;
+    
+    position: relative;
+    top: -35px;
+
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    body {
+        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+    }
+
+    
+}
+
+
+

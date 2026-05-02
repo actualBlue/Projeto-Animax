@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animax</title>
+    <link rel="stylesheet" href="stylecd.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <section class="auth-page">
+        <h1 id="titulo">ANIMAX</h1>
+        <main>
+            <div>
+                <img src="imagens/logo.png" alt="" id="logo">
+            </div>
+                <h2>Insira o código</h2>
+                <p id="desc">Insira o código de seis digitos enviado para o seu email para confirmarmos sua identidade</p>
+                <form action="/verificar" method="post" autocomplete="off">
+
+                    <div class="code-box">
+                        <input type="text" name="c1" maxlength="1">
+                        <input type="text" name="c2" maxlength="1">
+                        <input type="text" name="c3" maxlength="1">
+                        <input type="text" name="c4" maxlength="1">
+                        <input type="text" name="c5" maxlength="1">
+                        <input type="text" name="c6" maxlength="1">
+                    </div>
+                        <button>
+                            VERIFICAR
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+                </form>
+
+                    <br>
+                    <br>
+
+                    <p>Não recebeu? <a href="">Enviar novamente</a></p>
+        </main>
+        <p id="copyright">© 2026 Animax. Todos os direitos resevados.</p>
+    </section>
+
+    <script src="scriptcode.js"></script>
+</body>
+</html>
