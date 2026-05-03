@@ -44,6 +44,10 @@ body {
    border-bottom: 1px solid var(--branco);
 }
 
+#animax {
+    font-size: 27px;
+}
+
 .navegar {
     display: flex;
     align-items: center;
@@ -166,13 +170,7 @@ section.destaques {
 
     position: relative;
 
-    /* CARROSSEL */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    overflow: hidden;
-    transition: background-image 0.6s ease-in-out;
+    
 }
 
 section.destaques::before {

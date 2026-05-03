@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <header class="Cabeçalho">
+
+        <nav class="navegar">
+            <a href="#" id="animax">ANIMAX</a>
+
+            <div class="search-box">
+                <input type="text" placeholder="Buscar Animes" >
+                <button>🔍</button>
+            </div>
+
+            <ul class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="#">Temporada</a>
+                <a href="#">Minha conta</a>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="Login/login.html"><button class="btn-login">Entrar</button></a>
+                <a href="Login/register.html"><button class="btn-criar">Criar conta</button></a>
+            </div>
+        </nav>
+    </header>
+    <div class="filtros">
+        <h4>Filtros</h4>
+    <select id="filtro-genero">
+    <option value="todos">Gênero</option>
+    <option value="Ação">Ação</option>
+    <option value="Aventura">Aventura</option>
+    <option value="Fantasia">Fantasia</option>
+    <option value="Romance">Romance</option>
+</select>
+
+<select id="filtro-avaliacao">
+    <option value="todos">Avaliação</option>
+    <option value="9">9.0+</option>
+    <option value="8">8.0+</option>
+    <option value="7">7.0+</option>
+</select>
+
+<select id="filtro-ano">
+    <option value="todos">Ano</option>
+    <option value="2024">2024</option>
+    <option value="2023">2023</option>
+    <option value="2020">2020</option>
+    <option value="2016">2016</option>
+    <option value="2013">2013</option>
+</select>
+
+<select id="filtro-status">
+    <option value="todos">Status</option>
+    <option value="Finalizado">Finalizado</option>
+    <option value="Em lançamento">Em lançamento</option>
+</select>
+
+<select id="filtro-tipo">
+    <option value="todos">Tipo</option>
+    <option value="TV">TV</option>
+    <option value="Filme">Filme</option>
+</select>
+
+<select id="filtro-ordem">
+    <option value="padrao">Ordenar por</option>
+    <option value="maior-nota">Maior nota</option>
+    <option value="menor-nota">Menor nota</option>
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+    <option value="mais-recente">Mais recente</option>
+    <option value="mais-antigo">Mais antigo</option>
+</select>
+    </div>
+
+    <section class="animes">
+        <div class="anime-list">
+
+        </div>
+    </section>
+
+    <script src="catalogo.js"></script>
+</body>
+</html>
