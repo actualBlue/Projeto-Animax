@@ -8,7 +8,7 @@ const animes = [
         tipo: "TV",
         eps: 87,
         nota: 9.1,
-        imagem: "imagens/attack-on-titan.jpg"
+        imagem: "imagens/attack-on-titan-poster.jpg"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const animes = [
         tipo: "TV",
         eps: 70,
         nota: 8.7,
-        imagem: "imagens/rezero.jpg"
+        imagem: "imagens/re-zero-poster.jpg"
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const animes = [
         tipo: "TV",
         eps: 25,
         nota: 8.5,
-        imagem: "imagens/solo-leveling.jpg"
+        imagem: "imagens/solo-leveling-poster.jpg"
     },
     {
         id: 4,
@@ -41,7 +41,7 @@ const animes = [
         tipo: "TV",
         eps: 59,
         nota: 8.8,
-        imagem: "imagens/jujutsu.jpg"
+        imagem: "imagens/jujutsu-kaisen-poster.jpg"
     },
     {
         id: 5,
@@ -52,7 +52,7 @@ const animes = [
         tipo: "TV",
         eps: 38,
         nota: 9.0,
-        imagem: "imagens/frieren.jpg"
+        imagem: "imagens/frieren-poster.jpg"
     }
 ];
 
@@ -94,6 +94,10 @@ function mostrarAnimes(lista) {
     `;
   }
 
+}
+
+function abrirDetalhes(id) {
+    window.location.href = `detalhes.html?id=${id}`;
 }
 
 function filtraAnimes() {
