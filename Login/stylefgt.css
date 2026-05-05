@@ -197,11 +197,32 @@ main > p {
     font-size: 12px;
 }
 
+@media (max-width: 360px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .auth-page {
+        transform: scale(0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .auth-page {
+        transform: scale(1);
+    }
+}
+
 @media (max-width: 768px) {
     body {
         background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
     }
 }
+
 
 
 

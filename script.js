@@ -1,53 +1,58 @@
 /* CARROSSEL NO BANNER */
 
 const animesDestaques = [
-    {
+    {   
+        id: 3,
         titulo: "Solo Leveling",
         ano: "2024",
         idade: "16+",
-        episodios: "12eps",
-        avaliacao: "9.5/10",
+        episodios: "25 eps",
+        avaliacao: "8.5 / 10",
         generos: ["Ação", "Aventura", "Fantasia"],
         descricao: "Um caçador considerado fraco recebe uma chance misteriosa de evoluir sozinho em um mundo cheio de monstros.",
         imagem: "imagens/solo-leveling.jpg"
-},
-
-{
+    },
+    {       
+        id: 1,
         titulo: "Attack on Titan",
         ano: "2013",
         idade: "18+",
-        episodios: "87eps",
-        avaliacao: "9.8/10",
+        episodios: "87 eps",
+        avaliacao: "9.1 / 10",
         generos: ["Ação", "Drama"],
         descricao: "A humanidade luta pela sobrevivência atrás de muralhas enquanto enfrenta criaturas gigantes conhecidas como titãs.",
         imagem: "imagens/attack-on-titan.jpg"
     },
-    
-{
+    {       
+        id: 4,
         titulo: "Jujutsu Kaisen",
         ano: "2020",
         idade: "16+",
-        episodios: "47eps",
-        avaliacao: "9.3/10",
-        generos: ["Ação", "Drama", "Sobrenatural"],
+        episodios: "59 eps",
+        avaliacao: "8.8 / 10",
+        generos: ["Ação", "Sobrenatural"],
         descricao: "Um estudante entra no perigoso mundo das maldições após engolir um objeto amaldiçoado extremamente poderoso.",
-        imagem: "imagens/jujutsu-kaisen.jpg" 
+        imagem: "imagens/jujutsu-kaisen-banner.jpeg" 
     }
 ];
 
 let animeAtual = 0;
+let animeMostradoAgora = animesDestaques[0];
 
 const banner = document.querySelector("#destaques");
 const titulo = document.querySelector("#titulo");
 const ano = document.querySelector("#ano");
 const idade = document.querySelector("#idade");
 const episodios = document.querySelector("#episodios");
-const avaliacao = document.querySelector("#avaliacao")
+const avaliacao = document.querySelector("#avaliacao");
 const genero = document.querySelector("#anime-generos");
 const descricao = document.querySelector("#descricao");
+const btnDetalhes = document.querySelector("#btn-detalhes");
 
 function trocarAnimeDestaques() {
     const anime = animesDestaques[animeAtual];
+
+    animeMostradoAgora = anime;
 
     banner.style.backgroundImage = `url("${anime.imagem}")`;
 
@@ -56,18 +61,19 @@ function trocarAnimeDestaques() {
     idade.textContent = anime.idade;
     episodios.textContent = anime.episodios;
     avaliacao.textContent = anime.avaliacao;
+    descricao.textContent = anime.descricao;
+
     genero.innerHTML = "";
 
     anime.generos.forEach(function(generoAtual) {
         genero.innerHTML += `
-        <span class="genero-item">${generoAtual}</span>
+            <span class="genero-item">${generoAtual}</span>
         `;
     });
-    descricao.textContent = anime.descricao;
 
     animeAtual++;
 
-    if(animeAtual >= animesDestaques.length) {
+    if (animeAtual >= animesDestaques.length) {
         animeAtual = 0;
     }
 }
@@ -75,6 +81,10 @@ function trocarAnimeDestaques() {
 trocarAnimeDestaques();
 
 setInterval(trocarAnimeDestaques, 10000);
+
+btnDetalhes.addEventListener("click", function () {
+    window.location.href = `detalhes.html?id=${animeMostradoAgora.id}`;
+});
 
 /* CARDS */
 
@@ -173,3 +183,6 @@ if (launchPrev) {
     }); 
 }
 
+function abrirDetalhes(id) {
+    window.location.href = `detalhes.html?id=${id}`;
+}
