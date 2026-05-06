@@ -662,9 +662,14 @@ div.anime-list-rate, .anime-list-simi, .anime-area-parecidos .anime-list-simi {
     /* BANNER */
 
     section.destaques {
-        width: 92%;
+        width: 100%;
         height: 445px;
         overflow: hidden;
+
+        border-radius: 0px;
+        border-bottom: 1px solid var(--branco);
+        border-right: 0px;
+        border-left: 0px;
     }
 
     h1#titulo {

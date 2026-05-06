@@ -374,15 +374,7 @@ div.filtros select {
 
 }
 
-/* ========================= */
-/* RESPONSIVO - 769px ATÉ 1200px */
-/* NÃO AFETA O MOBILE 768px */
-/* ========================= */
-
-/* ================================= */
-/* HEADER RESPONSIVO - 1190px até 769px */
-/* NÃO MEXE NO 768px */
-/* ================================= */
+/* Mobile */
 
 @media (min-width: 769px) and (max-width: 1190px) {
 

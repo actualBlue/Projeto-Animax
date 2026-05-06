@@ -7,6 +7,7 @@ const animes = [
         idade: "18+",
         status: "Finalizado",
         tipo: "TV",
+        estudio: "Mappa",
         eps: 87,
         nota: 9.1,
         imagem: "imagens/attack-on-titan-poster.jpg",
@@ -116,10 +117,48 @@ if (anime) {
 }
 
 
-anime.generos.forEach(function(generoAtual) {
-        genero.innerHTML += `
-        <span class="genero-item">${generoAtual}</span>
-        `;
-    });
+const res = document.querySelector("#res");
+const tiponav = document.querySelector("#tipo-nav");
+const tipo = document.querySelector("#tipo");
+const estudio = document.querySelector("#estudio");
+const classificacao = document.querySelector("#classificacao");
+const exibicao = document.querySelector("#exibicao");
+const status = document.querySelector("#status");
 
+window.sobre = function () {
+    
+    tiponav.innerHTML = "Sinopse"
+    res.innerHTML = `${anime.descricao}`;
+    tipo.innerHTML = `
+    <span class="info-label">Tipo</span>
+    <span class="info-valor">${anime.tipo}</span>
+    `
+    estudio.innerHTML = `
+    <span class="info-label">Estúdio</span>
+    <span class="info-valor">${anime.estudio}</span>
+    `
+    classificacao.innerHTML = `
+    <span class="info-label">Classificação</span>
+    <span class="info-valor">${anime.idade}</span>
+    `
+    exibicao.innerHTML = `
+    <span class="info-label">Exibição</span>
+    <span class="info-valor">2013-2022</span>
+    `
+
+    status.innerHTML = `
+    <span class="info-label">Status</span>
+    <span class="info-valor">${anime.status}</span>
+    `
+};
+
+function review() {
+    tiponav.innerHTML = ""
+    res.innerHTML = "Reviews aqui";
+    tipo.innerHTML = "";
+    estudio.innerHTML = "";
+    classificacao.innerHTML = "";
+    status.innerHTML = "";
+    exibicao.innerHTML = "";
+};
     
