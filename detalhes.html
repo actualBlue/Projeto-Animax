@@ -35,8 +35,6 @@
         <div class="content">
         
             <div class="anime-img"> <img src="" alt=""></div>
-            
-            </div>
 
             <div class="anime-dados">
                 <h1 id="titulo">Titulo</h1>
@@ -76,33 +74,83 @@
     </div>
 </section>
 
-    <section class="dados">
-       <nav>
-        <div onclick="sobre()" class="sobre">Sobre</div>
-        <div onclick="review()" class="review">Reviews (193)</div>
-       </nav>
-       
-       <div id="divisaoo"></div>
+        <div class="area-detalhes">
+        <div class="area-baixo-pag">
+            <section class="dados">
+               <nav>
+                <div onclick="sobre()" class="sobre">Sobre</div>
+                <div onclick="review()" class="review">Reviews (193)</div>
+               </nav>
+            
+               <div id="divisaoo"></div>
+               <div class="dados">
+                   <div id="tipo-nav"></div>
+                   <div id="res"></div>
+               </div>
+               <div class="sub-dados">
+                   <div id="tipo"></div>
+                   <div id="estudio"></div>
+                   <div id="classificacao"></div>
+                   <div id="exibicao"></div>
+                   <div id="status"></div>
+               </div>
+            
+            </section>
+            <section class="episodios">
+                <div class="eps-header">
+                    Episódios
+                    <select name="Ordenar" id="ordem">
+                        <option value="Mais bem avaliados">Mais bem avaliados</option>
+                        <option value="Menos avaliados">Menos avaliados</option>
+                    </select>
+                    
+                    <div class="eps-header-rating">
+                        <div>#</div>
+                        <div id="titulo-section">Titúlo do episódio</div>
+                        <div>Média</div>
+                        <div>Avaliações</div>
+                        <div>Ação</div>
+                        
+                        <div id="divisoria-eps"></div>
 
+                        <div class="dados-eps">
+                            <div id="eps"></div>
+                            <div id="titulos"></div>
+                            <div class="rate">
+                                <div id="media"></div>
+                                <div id="ratings"></div>
+                                <div id="acao">
 
-       <div class="dados">
-           <div id="tipo-nav"></div>
-           <div id="res"></div>
-       </div>
+                                     <button>Avaliar</button>
+                        </div>
+                               
+                            </div>
+                    
+                        </div>
 
-       <div class="sub-dados">
+                    </div>
 
-           <div id="tipo"></div>
-           <div id="estudio"></div>
-           <div id="classificacao"></div>
-           <div id="exibicao"></div>
-           <div id="status"></div>
-
-       </div>
-
-       
-    </section>
-
+                </div>
+            </section>
+            <section class="relacionados">
+                <h3>Animes recomendados</h3>
+                <div id="card-anime">
+            
+                </div>
+                <div class="dados-anime">
+                    <h5>Re zero</h5>
+                    <div class="sub-dados-relac">
+                        <h5>2017</h5>
+                        <h5>70eps</h5>
+                    </div>
+                    <div>
+                        <button id="btn-ver-mais">Ver mais</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+ </div>
         <script src="detalhes.js"></script>
 </body>
 </html>

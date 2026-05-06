@@ -18,7 +18,7 @@
             </div>
             <h2>Criar conta</h2>
             <p id="desc">Junte-se a comunidade de animes</p>
-            <form action="" method="get" autocomplete="off">
+            <form action="" method="get" autocomplete="off" onsubmit="registrar()">
                 <div class="input-group">
                     <label for="iusuario">Nome de usúario</label>
         
@@ -39,6 +39,11 @@
                     <i class="fa-solid fa-lock icon-left"></i>
                     <input type="password" name="confsenha" id="iconfsenha" placeholder="Confirmar senha" minlength="8" required>
                     <i class="fa-regular fa-eye icon-eye toggle-password eye-confirmar" data-target="iconfsenha"></i>
+
+                    <div class="erro">
+                        
+                    </div>
+
                     </div>
                     <button type="submit">
                         CRIAR CONTA

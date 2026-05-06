@@ -13,4 +13,22 @@ botoesOlho.forEach((olho) => {
 
 window.addEventListener("load", () => {
     window.scrollTo(0, 0);
-})
+});
+
+
+
+function registrar() {
+    event.preventDefault();
+
+const senha = document.querySelector("#isenha").value;
+const confsenha = document.querySelector("#iconfsenha").value;
+const erro = document.querySelector(".erro");
+
+if (senha !== confsenha) {
+    erro.innerHTML = 'Senha não coincide';
+} else {
+    erro.innerHTML = '';
+    event.target.submit()
+}
+
+}

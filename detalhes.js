@@ -5,6 +5,10 @@ const animes = [
         generos: ["Ação", "Drama"],
         ano: 2013,
         idade: "18+",
+        episodios: ["Para você, em 2.000 anos no futuro", "Aquele Dia – A Queda de Shiganshina, Parte 2", "Uma Luz Tênue em Meio ao Desespero – A Humanidade Revida, Parte 1", "A Noite da Cerimônia de Encerramento – A Humanidade Revida, Parte 2", "Primeira Batalha – A Luta por Trost, Parte 1"],
+        epsmini: ["01"],
+        mediaep: ["9.0"],
+        rateseps:["53"],     
         status: "Finalizado",
         tipo: "TV",
         estudio: "Mappa",
@@ -161,4 +165,15 @@ function review() {
     status.innerHTML = "";
     exibicao.innerHTML = "";
 };
+
+const ep = document.querySelector("#eps");
+const tituloep = document.querySelector("#titulos");
+const media = document.querySelector("#media");
+const rating = document.querySelector("#ratings");
+const avaliar = document.querySelector("#acao");
+
+ep.innerHTML = `${anime.epsmini}`
+tituloep.innerHTML = `${anime.episodios[0]}`
+media.innerHTML = `${anime.mediaep}`
+rating.innerHTML = `${anime.rateseps}`
     
