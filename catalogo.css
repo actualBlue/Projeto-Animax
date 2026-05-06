@@ -373,3 +373,98 @@ div.filtros select {
 }
 
 }
+
+/* Mobile */
+
+@media (min-width: 769px) and (max-width: 1190px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .Cabeçalho {
+        padding: 18px 28px;
+        overflow: hidden;
+    }
+
+    .navegar {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+            "logo search actions"
+            "links links links";
+
+        align-items: center;
+        gap: 22px 24px;
+    }
+
+    #animax {
+        grid-area: logo;
+
+        font-size: clamp(32px, 4vw, 46px);
+        letter-spacing: 3px;
+
+        white-space: nowrap;
+    }
+
+    .search-box {
+        grid-area: search;
+
+        width: 100%;
+        max-width: 420px;
+        height: 50px;
+
+        justify-self: center;
+    }
+
+    .search-box input {
+        font-size: 17px;
+    }
+
+    .search-box button {
+        font-size: 22px;
+    }
+
+    .nav-actions {
+        grid-area: actions;
+
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+
+        white-space: nowrap;
+    }
+
+    .nav-actions > a > .btn-login,
+    .nav-actions > a > .btn-criar {
+        width: 112px;
+        height: 48px;
+
+        font-size: 18px;
+    }
+
+    .nav-links {
+        grid-area: links;
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 34px;
+    }
+
+    .nav-links > a {
+        font-size: 22px;
+
+        padding: 0;
+        white-space: nowrap;
+
+        text-underline-offset: 12px;
+    }
+}
