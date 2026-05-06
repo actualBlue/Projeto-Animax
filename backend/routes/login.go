@@ -1,6 +1,8 @@
 package Routes
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 	database "github.com/seu-usuario/vura-backend/db"
 	"github.com/seu-usuario/vura-backend/models"
@@ -10,8 +12,10 @@ import (
 func InitLogin(app *fiber.App) {
 	app.Post("/login", func(c *fiber.Ctx) error {
 		// get id
-		var user models.User
+		var user models.LoginRequest
+		var userDB models.User
 		err := c.BodyParser(&user)
+		fmt.Println("Request: ", user)
 
 		// err handling
 		if err != nil {
@@ -20,12 +24,17 @@ func InitLogin(app *fiber.App) {
 			})
 		}
 
+		// data transfer
+		userDB.Email = user.Email
+		userDB.Username = user.Username
+		userDB.Password = user.Password
+
 		// get db info
 		var userInfo models.User
-		dbErr := database.DB.First(&userInfo, user.ID)
+		dbErr := database.DB.First(&userInfo, userDB)
 		if dbErr.Error != nil {
 			return c.Status(500).JSON(fiber.Map{
-				"error": "error fetching backend data",
+				"error": dbErr.Error.Error(),
 			})
 		}
 
