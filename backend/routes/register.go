@@ -18,7 +18,8 @@ func HashPassword(s string) string {
 func InitRegister(app *fiber.App) {
 	app.Post("/register", func(c *fiber.Ctx) error {
 		// get body
-		var user models.User
+		var user models.LoginRequest
+		var userDB models.User
 		err := c.BodyParser(&user)
 
 		if len(user.Password) < 6 || len(user.Password) > 50 {
@@ -40,9 +41,20 @@ func InitRegister(app *fiber.App) {
 		}
 
 		// hash user password
-		user.Password = HashPassword(user.Password)
+		userDB.Password = HashPassword(user.Password)
+		userDB.Username = user.Username
+		userDB.Email = user.Email
 
-		result := database.DB.Create(&user)
+		// check if already exists
+		var CheckUser models.User
+		database.DB.Where("Username = ? OR Email = ?", userDB.Username, userDB.Email).First(&CheckUser)
+		if CheckUser.ID != 0 {
+			return c.Status(400).JSON(fiber.Map{
+				"error": "username or email already in use!",
+			})
+		}
+
+		result := database.DB.Create(&userDB)
 		if result.Error != nil {
 			return c.Status(500).JSON(fiber.Map{
 				"error": result.Error,
