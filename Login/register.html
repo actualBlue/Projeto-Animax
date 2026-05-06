@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
             </div>
             <h2>Criar conta</h2>
             <p id="desc">Junte-se a comunidade de animes</p>
-            <form action="" method="get" autocomplete="off" onsubmit="registrar()">
+            <form action="" method="get" autocomplete="off">
                 <div class="input-group">
                     <label for="iusuario">Nome de usúario</label>
         
@@ -39,13 +39,8 @@
                     <i class="fa-solid fa-lock icon-left"></i>
                     <input type="password" name="confsenha" id="iconfsenha" placeholder="Confirmar senha" minlength="8" required>
                     <i class="fa-regular fa-eye icon-eye toggle-password eye-confirmar" data-target="iconfsenha"></i>
-
-                    <div class="erro">
-                        
                     </div>
-
-                    </div>
-                    <button type="submit">
+                    <button type="button" class="registerButton">
                         CRIAR CONTA
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -56,11 +51,10 @@
                     <div></div>
                 </section>
                 <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
-        
-        </main>
-        <p id="copyright">© 2026 Animax. Todos os direitos resevados.</p>
-    </section>
+            </main>
+            <p id="copyright">© 2026 Animax. Todos os direitos resevados.</p>
+        </section>
 
-    <script src="scriptrg.js"></script>
-</body>
+        <script src="scriptrg.js"></script>
+    </body>
 </html>
