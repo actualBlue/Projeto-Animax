@@ -4,6 +4,7 @@ const passwordInput = document.querySelector("#iconfsenha");
 const passwordConfirmInput = document.querySelector("#isenha");
 const emailInput = document.querySelector("#iemail");
 const usernameInput = document.querySelector("#iusuario");
+const erro = document.querySelector(".erro")
 
 botoesOlho.forEach((olho) => {
   olho.addEventListener("click", () => {
@@ -19,7 +20,7 @@ botoesOlho.forEach((olho) => {
 registerButton.onclick = async function (e) {
   // check
   if (passwordInput.value !== passwordConfirmInput.value) {
-    alert("Passwords must match");
+    erro.innerhtml("Senhas não coincidem");
     return;
   }
 
@@ -40,6 +41,3 @@ registerButton.onclick = async function (e) {
   }
 };
 
-window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
-})

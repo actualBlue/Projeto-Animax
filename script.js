@@ -1,43 +1,9 @@
 /* CARROSSEL NO BANNER */
 
-const animesDestaques = [
-    {   
-        id: 3,
-        titulo: "Solo Leveling",
-        ano: "2024",
-        idade: "16+",
-        episodios: "25 eps",
-        avaliacao: "8.5 / 10",
-        generos: ["Ação", "Aventura", "Fantasia"],
-        descricao: "Um caçador considerado fraco recebe uma chance misteriosa de evoluir sozinho em um mundo cheio de monstros.",
-        imagem: "imagens/solo-leveling.jpg"
-    },
-    {       
-        id: 1,
-        titulo: "Attack on Titan",
-        ano: "2013",
-        idade: "18+",
-        episodios: "87 eps",
-        avaliacao: "9.1 / 10",
-        generos: ["Ação", "Drama"],
-        descricao: "A humanidade luta pela sobrevivência atrás de muralhas enquanto enfrenta criaturas gigantes conhecidas como titãs.",
-        imagem: "imagens/attack-on-titan.jpg"
-    },
-    {       
-        id: 4,
-        titulo: "Jujutsu Kaisen",
-        ano: "2020",
-        idade: "16+",
-        episodios: "59 eps",
-        avaliacao: "8.8 / 10",
-        generos: ["Ação", "Sobrenatural"],
-        descricao: "Um estudante entra no perigoso mundo das maldições após engolir um objeto amaldiçoado extremamente poderoso.",
-        imagem: "imagens/jujutsu-kaisen-banner.jpeg" 
-    }
-];
 
+let animesDestaques = []
 let animeAtual = 0;
-let animeMostradoAgora = animesDestaques[0];
+let animeMostradoAgora = null;
 
 const banner = document.querySelector("#destaques");
 const titulo = document.querySelector("#titulo");
@@ -49,7 +15,37 @@ const genero = document.querySelector("#anime-generos");
 const descricao = document.querySelector("#descricao");
 const btnDetalhes = document.querySelector("#btn-detalhes");
 
+async function  carregarAnimesDestaques() {
+    try {
+        const resposta = await fetch("https://api.jikan.moe/v4/top/anime?limit=5&filter=bypopularity");
+        const dados = await resposta.json();
+
+        animesDestaques = dados.data.map(function(anime) {
+            return {
+                id: anime.mal_id,
+                titulo: anime.title,
+                ano: anime.year || "N/A",
+                idade: anime.rating || "N/A",
+                episodios: anime.score ? `${anime.score}/10` : "N/A",
+                generos: anime.genres.map(function(genero) {
+                    return genero.name;
+                }),
+                
+                imagem: anime.trailer?.images.maximum_image_url || anime.images.jpg.large_image_url
+            };
+        });
+    
+        trocarAnimeDestaques();
+        setInterval(trocarAnimeDestaques, 10000);
+
+    } catch (erro) {
+        console.log("Erro ao carregar animes:", erro);
+    }
+    
+}
 function trocarAnimeDestaques() {
+    if (animesDestaques.length === 0) return;
+
     const anime = animesDestaques[animeAtual];
 
     animeMostradoAgora = anime;
@@ -78,9 +74,8 @@ function trocarAnimeDestaques() {
     }
 }
 
-trocarAnimeDestaques();
+carregarAnimesDestaques();
 
-setInterval(trocarAnimeDestaques, 10000);
 
 btnDetalhes.addEventListener("click", function () {
     window.location.href = `detalhes.html?id=${animeMostradoAgora.id}`;

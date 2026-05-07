@@ -13,42 +13,54 @@
             <a href="#" id="animax">ANIMAX</a>
 
             <div class="search-box">
-                <input type="text" placeholder="Buscar Animes" >
+                <input type="text" placeholder="Search animes..." >
                 <button>🔍</button>
             </div>
 
             <ul class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="#">Temporada</a>
-                <a href="#">Minha conta</a>
+                <a href="index.html">Home</a>
+                <a href="catalogo.html">Catalog</a>
+                <a href="#">Season</a>
+                <a href="#">My account</a>
             </ul>
 
             <div class="nav-actions">
-                <a href="Login/login.html"><button class="btn-login">Entrar</button></a>
-                <a href="Login/register.html"><button class="btn-criar">Criar conta</button></a>
+                <a href="Login/login.html"><button class="btn-login">Login</button></a>
+                <a href="Login/register.html"><button class="btn-criar">Create account</button></a>
             </div>
         </nav>
     </header>
     <div class="filtros">
-        <h4>Filtros</h4>
+        <h4>Filters</h4>
     <select id="filtro-genero">
-    <option value="todos">Gênero</option>
-    <option value="Ação">Ação</option>
-    <option value="Aventura">Aventura</option>
-    <option value="Fantasia">Fantasia</option>
-    <option value="Romance">Romance</option>
+    <option value="todos">Genres</option>
+    <option value="1">Action</option>
+    <option value="2">Adventure</option>
+    <option value="4">Comedy</option>
+    <option value="8">Drama</option>
+    <option value="10">Fantasy</option>
+    <option value="14">Horror</option>
+    <option value="22">Romance</option>
+    <option value="24">Sci-Fi</option>
+    <option value="36">Slice of Life</option>
+    <option value="37">Sobrenatural</option>
+    <option value="41">Suspense</option>
+    <option value="30">Sports</option>
+    <option value="17">Martial Arts</option>
+    <option value="19">Music</option>
+    
+    
 </select>
 
 <select id="filtro-avaliacao">
-    <option value="todos">Avaliação</option>
+    <option value="todos">Ratings</option>
     <option value="9">9.0+</option>
     <option value="8">8.0+</option>
     <option value="7">7.0+</option>
 </select>
 
 <select id="filtro-ano">
-    <option value="todos">Ano</option>
+    <option value="todos">Year</option>
     <option value="2024">2024</option>
     <option value="2023">2023</option>
     <option value="2020">2020</option>
@@ -58,24 +70,24 @@
 
 <select id="filtro-status">
     <option value="todos">Status</option>
-    <option value="Finalizado">Finalizado</option>
-    <option value="Em lançamento">Em lançamento</option>
+    <option value="complete">Complete</option>
+    <option value="airing">Airing</option>
 </select>
 
 <select id="filtro-tipo">
-    <option value="todos">Tipo</option>
-    <option value="TV">TV</option>
-    <option value="Filme">Filme</option>
+    <option value="todos">Type</option>
+    <option value="tv">TV</option>
+    <option value="movie">Movie</option>
 </select>
 
 <select id="filtro-ordem">
-    <option value="padrao">Ordenar por</option>
-    <option value="maior-nota">Maior nota</option>
-    <option value="menor-nota">Menor nota</option>
-    <option value="az">A-Z</option>
-    <option value="za">Z-A</option>
-    <option value="mais-recente">Mais recente</option>
-    <option value="mais-antigo">Mais antigo</option>
+    <option value="padrao">Order </option>
+    <option value="score-desc">Highest score</option>
+    <option value="score-asc">Lowest score</option>
+    <option value="title-asc">A-Z</option>
+    <option value="title-desc">Z-A</option>
+    <option value="start-date-desc">Newest</option>
+    <option value="start-date-asc">Oldest</option>
 </select>
     </div>
 
@@ -84,6 +96,14 @@
 
         </div>
     </section>
+
+    <div class="paginacao">
+        <button id="btn-anterior">Previous</button>
+        <div class="caixa-pagina">
+            <input type="number" id="numero-pagina" value="1" min="1">
+        </div>
+        <button id="btn-proximo">Next</button>
+    </div>
 
     <script src="catalogo.js"></script>
 </body>
