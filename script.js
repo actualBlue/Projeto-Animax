@@ -152,8 +152,6 @@ function moverCarrossel(lista, direcao) {
     });
 }
 
- 
-
 if (trendingNext) {
     trendingNext.addEventListener("click", function () {
         moverCarrossel(trendingList, 1)
@@ -181,3 +179,22 @@ if (launchPrev) {
 function abrirDetalhes(id) {
     window.location.href = `detalhes.html?id=${id}`;
 }
+
+const searchInput = document.querySelector(".search-box input");
+const searchButton = document.querySelector(".search-box button");
+
+function irParaCatalogo() {
+    const pesquisa = searchInput.value.trim();
+
+    if (pesquisa === "") return;
+
+    window.location.href = `catalogo.html?search=${encodeURIComponent(pesquisa)}`;
+}
+
+searchButton.addEventListener("click", irParaCatalogo);
+
+searchInput.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter") {
+        irParaCatalogo()
+    }
+});

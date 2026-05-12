@@ -1,3 +1,6 @@
+
+
+
 let paginaAtual = 1;
 
 const animesList = document.querySelector(".anime-list");
@@ -21,7 +24,7 @@ async function buscarAnimes(termo = "", pagina = 1) {
     let url = `https://api.jikan.moe/v4/anime?limit=20&page=${pagina}&sfw`;
 
     if (termo) {
-        url += `&q=${termo}`;
+        url += `&q=${encodeURIComponent(termo)}`;
     }
 
     
@@ -115,5 +118,13 @@ filtros.forEach(el => {
     }
 });
 
+const params = new URLSearchParams(window.location.search);
+const pesquisaUrl = params.get("search");
 
-buscarAnimes();
+if (pesquisaUrl) {
+    inputBusca.value = pesquisaUrl;
+    buscarAnimes(pesquisaUrl, 1);
+} else {
+    buscarAnimes();
+}
+

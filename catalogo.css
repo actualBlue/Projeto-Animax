@@ -280,6 +280,7 @@ div.filtros select {
     display: flex;
     flex-direction: column;
     gap: 3px;
+    
     font-size: 15px;
 }
 
@@ -287,7 +288,9 @@ div.filtros select {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 15px;
+
     margin: 40px 0;
     width: 100%;
 }
@@ -295,13 +298,21 @@ div.filtros select {
 .paginacao button {
     background-color: var(--preto);
     color: var(--branco);
+
     border: 1px solid var(--branco);
-    padding: 10px 24px;
     border-radius: 6px;
+
+    padding: 10px 24px;
+    
+
     font-size: 14px;
     font-weight: bold;
+
     cursor: pointer;
+
     transition: background 0.2s, color 0.2s;
+
+    width: 120px;
 }
 
 .paginacao button:hover {

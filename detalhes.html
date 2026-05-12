@@ -18,15 +18,15 @@
             </div>
 
             <ul class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="#">Temporada</a>
-                <a href="#">Minha conta</a>
+                <a href="index.html">Home</a>
+                <a href="catalogo.html">Catalog</a>
+                <a href="#">Season</a>
+                <a href="#">My account</a>
             </ul>
 
             <div class="nav-actions">
-                <a href="Login/login.html"><button class="btn-login">Entrar</button></a>
-                <a href="Login/register.html"><button class="btn-criar">Criar conta</button></a>
+                <a href="Login/login.html"><button class="btn-login">Join</button></a>
+                <a href="Login/register.html"><button class="btn-criar">Create account</button></a>
             </div>
         </nav>
     </header>
@@ -61,13 +61,13 @@
                     <h2 id="nota-max">/ 10</h2>
 
                     <div class="texto-nota">
-                    <h4 id="overrall">Muito bom</h4>
-                    <h4 id="ppl-nota">Baseado em 193 avaliações</h4>
+                    <h4 id="overrall">Very good</h4>
+                    <h4 id="ppl-nota">Based on 193 ratings</h4>
                     </div>
                 </div>
 
                 <div class="botoes">
-                    <button class="btn-primario">Entre para avaliar</button>
+                    <button class="btn-primario">Join to Favorite</button>
                 </div>
             </div>
         </div> 
@@ -77,80 +77,207 @@
         <div class="area-detalhes">
         <div class="area-baixo-pag">
             <section class="dados">
-               <nav>
-                <div onclick="sobre()" class="sobre">Sobre</div>
-                <div onclick="review()" class="review">Reviews (193)</div>
-               </nav>
-            
+               
+                <h2 id="sobre">About</h2>
+         
                <div id="divisaoo"></div>
-               <div class="dados">
-                   <div id="tipo-nav"></div>
-                   <div id="res"></div>
-               </div>
-               <div class="sub-dados">
-                   <div id="tipo"></div>
-                   <div id="estudio"></div>
-                   <div id="classificacao"></div>
-                   <div id="exibicao"></div>
-                   <div id="status"></div>
-               </div>
-            
+
+        <div class="info-sobre">
+        <div class="coluna-sobre">
+
+            <div class="info-item">
+
+                <span>Status</span>
+                <p id="status"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Episodes</span>
+                <p id="total-episodios"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Studio</span>
+                <p id="estudio"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Release</span>
+                <p id="lancamento"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Season</span>
+                <p id="temporada"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Producers</span>
+                <p id="produtores"></p>
+
+            </div>
+        </div>
+
+        <div class="coluna-sobre">
+
+            <div class="info-item">
+                <span>Type</span>
+                <p id="tipo"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Duration</span>
+                <p id="duracao"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Origin</span>
+                <p id="origem"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Ending</span>
+                <p id="termino"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Licensors</span>
+                <p id="licenciadores"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Transmitted</span>
+                <p id="transmitido"></p>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Favorites</span>
+                <p id="favoritos">0</p>
+
+            </div>
+        </div>
+        </div>
+
             </section>
             <section class="episodios">
+
                 <div class="eps-header">
-                    Episódios
-                    <select name="Ordenar" id="ordem">
-                        <option value="Mais bem avaliados">Mais bem avaliados</option>
-                        <option value="Menos avaliados">Menos avaliados</option>
+                    <h2>Episodes</h2>
+
+                    <select name="Order" id="ordem">
+                        <option value="mais-avaliados">Highest Score</option>
+                        <option value="menos-avaliados">Lowest score</option>
                     </select>
-                    
-                    <div class="eps-header-rating">
-                        <div>#</div>
-                        <div id="titulo-section">Titúlo do episódio</div>
-                        <div>Média</div>
-                        <div>Avaliações</div>
-                        <div>Ação</div>
-                        
-                        <div id="divisoria-eps"></div>
-
-                        <div class="dados-eps">
-                            <div id="eps"></div>
-                            <div id="titulos"></div>
-                            <div class="rate">
-                                <div id="media"></div>
-                                <div id="ratings"></div>
-                                <div id="acao">
-
-                                     <button>Avaliar</button>
-                        </div>
-                               
-                            </div>
-                    
-                        </div>
-
-                    </div>
-
                 </div>
+
+                <div class="eps-table-header">
+                    <span id="num">#</span>
+                    <span id="title">Episode title</span>
+
+                    <div class="sub-header">
+                        <span id="media">Media</span>
+                        <span id="ratings">Ratings</span>
+                        <span id="action">Action</span>
+                    </div>
+                </div>
+
+                <div id="lista-eps">
+
+                    
+            </div>
+            
+            <div class="eps-pagination">
+                <button id="btn-anterior">Previous</button>
+
+                <input type="number" id="pagina-atual" value="1" min="1">
+
+                <button id="btn-proxima">Next</button>
+            </div>
+
             </section>
             <section class="relacionados">
-                <h3>Animes recomendados</h3>
-                <div id="card-anime">
-            
+                <h2>Recommended animes</h2>
+
+                <div class="recommended-list">
+
                 </div>
-                <div class="dados-anime">
-                    <h5>Re zero</h5>
-                    <div class="sub-dados-relac">
-                        <h5>2017</h5>
-                        <h5>70eps</h5>
-                    </div>
-                    <div>
-                        <button id="btn-ver-mais">Ver mais</button>
-                    </div>
-                </div>
+
             </section>
         </div>
+
     </div>
- </div>
+</div>
+
+ <section class="comentarios">
+    <div>
+        <div class="comentarios-header">
+            <div class="comentarios-titulo">
+                <h2>Comments</h2>
+                <span id="total-comentarios">0 Comments</span>
+            </div>
+
+            <select id="ordenar">
+                <option value="mais-rencete">Most recently</option>
+                <option value="mais-curtido">Most Liked</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="comentario-form">
+        <textarea id="comentario-input" placeholder="Write your comment..."></textarea>
+        <button id="btn-comentar">Post comment</button>
+    </div>
+
+    <div id="divisoria"></div>
+
+    <div id="lista-comentarios">
+        <div class="comentario-card">
+    <div class="comentario-topo">
+        <div class="comentario-user-area">
+            <img src="imagens/chara.jpg" alt="Avatar" class="comentario-avatar">
+
+            <div>
+                <h3 class="comentario-usuario">Dumb123</h3>
+                <span class="comentario-data">2 days ago</span>
+            </div>
+        </div>
+
+        <div class="comentario-acoes">
+            <button id="like">♡</button>
+            <span>0</span>
+            <button>⚑</button>
+            <button>⋮</button>
+        </div>
+    </div>
+
+    <p class="comentario-texto">
+        Simply amazing. The world-building, characters, and story are on another level. Each episode leaves me eager for the next. One of the best animes I've ever watched.
+    </p>
+</div>
+
+ </section>
         <script src="detalhes.js"></script>
 </body>
 </html>
