@@ -13,7 +13,6 @@ func InitLogin(app *fiber.App) {
 	app.Post("/login", func(c *fiber.Ctx) error {
 		// get id
 		var user models.LoginRequest
-		var userDB models.User
 		err := c.BodyParser(&user)
 		fmt.Println("Request: ", user)
 
@@ -24,14 +23,10 @@ func InitLogin(app *fiber.App) {
 			})
 		}
 
-		// data transfer
-		userDB.Email = user.Email
-		userDB.Username = user.Username
-		userDB.Password = user.Password
-
 		// get db info
+		fmt.Println(user.Email)
 		var userInfo models.User
-		dbErr := database.DB.First(&userInfo, userDB)
+		dbErr := database.DB.Where("email = ?", user.Email).First(&userInfo)
 		if dbErr.Error != nil {
 			return c.Status(500).JSON(fiber.Map{
 				"error": dbErr.Error.Error(),
