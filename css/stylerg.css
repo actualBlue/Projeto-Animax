@@ -14,15 +14,17 @@
 }
 
 html, body {
-    height: 100%;
     overflow: hidden;
+    
 }
 
-body {
-    height: 100vh;
-    overflow: hidden;
 
-    background: url(imagens/fundo-pc.png) center center / cover no-repeat;
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    
+
+    background: url(../imagens/fundo-pc.png) center center / cover no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -39,32 +41,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-main {
-    background-color: #070706;
-    color: var(--branco);
-
-    border: 1px solid var(--branco);
-
-    width: 350px;
-
-    text-align: center;
-
-    border-radius: 12px;
-
-    padding: 10px;
-
-    margin-top: -70px;
-
-    transform: scale(0.80);
+    margin-top: -10px;
 }
 
 h1#titulo {
     color: var(--branco);
     font-size: 44px;
-    margin-bottom: 25px;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 div > #logo {
@@ -72,9 +56,29 @@ div > #logo {
     margin-bottom: 8px;
 }
 
+main {
+    background-color: #070706;
+    color: var(--branco);
+    border: 1px solid var(--branco);
+
+    width: 350px;
+
+    margin: 0 auto;
+   margin-top: -130px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    transform: scale(0.67);
+}
+
 main > h2 {
     font-size: 32px;
     margin-top: 0;
+
 }
 
 main > p#desc {
@@ -91,6 +95,63 @@ form  {
     display: flex;
     flex-direction: column;
 }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.input-group .fa-user {
+    position: absolute;
+    margin-top: 39px;
+    margin-left: 12px;
+    
+    color: var(--cinza);
+}
+
+.input-group .fa-envelope {
+    position: absolute;
+    margin-top: 131px;
+    margin-left: 12px;
+
+    color: var(--cinza);
+}
+
+.input-group .fa-lock {
+    position: absolute;
+    margin-top: 220px;
+    margin-left: 12px;
+
+    color: var(--cinza);
+}
+
+.input-group .toggle-password {
+    position: absolute;
+    right: 14px;
+
+    color: var(--branco);
+    cursor: pointer;
+}
+
+.eye-senha {
+    top: 221px;
+}
+
+.eye-confirmar {
+    top: 313px;
+}
+
+.icon-left {
+    position: absolute;
+    top: 90px;
+
+    color: var(--cinza);
+}
+
+
 
 .input-group label {
     margin-bottom: 8px;
@@ -111,21 +172,16 @@ form  {
     padding-right: 40px;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    position: relative;
-
-}
-
-.fa-envelope {
+div.erro {
     position: absolute;
-    margin-top: 41px;
-    margin-left: 12px;
+    bottom: -25px;
+    left: 75px;
+
+    margin: auto;
     
-    color: var(--cinza);
+
+    color: rgb(218, 39, 39);
+    
 }
 
 button {
@@ -141,6 +197,14 @@ button {
     font-weight: bold;
     cursor: pointer;
 
+    margin-top: 35px;
+
+}
+
+.fa-arrow-right {
+    position: absolute;
+    left: 80%;
+    top: 78.6%;
     
 }
 
@@ -166,13 +230,6 @@ button {
     margin: 0;
 }
 
-.fa-arrow-right {
-    position: absolute;
-    left: 88%;
-    top: 79%;
-    
-}
-
 main > p:last-child {
     color: var(--cinza);
 }
@@ -184,45 +241,37 @@ main > p > a {
 }
 
 main > p {
-    padding-bottom: 10px;
+    margin-bottom: 13px;
 }
 
 #copyright {
-   color: var(--cinza);
+    color: var(--cinza);
     text-align: center;
     
-    position: relative;
-    top: -35px;
+    margin-top: -100px;
+    position: static;
 
     font-size: 12px;
 }
 
-@media (max-width: 360px) {
-    body {
-        overflow-y: auto;
-    }
-
-    .auth-page {
-        transform: scale(0.1);
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        overflow-y: auto;
-    }
-
-    .auth-page {
-        transform: scale(1);
-    }
-}
-
 @media (max-width: 768px) {
+     html, body {
+        height: auto;
+        min-height: 100dvh;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
     body {
-        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+        background: url(../imagens/fundo-mobile.png) center center / cover no-repeat;
+
+        justify-content: flex-start;
+        
+        
+        min-height: 100dvh;
+        overflow-x: hidden;
+        
     }
 }
-
-
-
-

@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     overflow: hidden;
 
-    background: url(imagens/fundo-pc.png) center center / cover no-repeat;
+    background: url(../imagens/fundo-pc.png) center center / cover no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -34,8 +34,7 @@ body {
 h1#titulo {
     color: var(--branco);
     font-size: 44px;
-    margin-bottom: 25px;
-    margin-top: 20px;
+    margin-bottom: 36px;
 }
 
 div > #logo {
@@ -177,7 +176,7 @@ button {
 .fa-arrow-right {
     position: absolute;
     left: 88%;
-    top: 88%;
+    top: 88.7%;
     
 }
 
@@ -222,13 +221,13 @@ main > p {
     text-align: center;
     
     position: relative;
-    top: -80px;
+    top: -77px;
 
     font-size: 12px;
 }
 
 @media (max-width: 768px) {
     body {
-        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+        background: url(../imagens/fundo-mobile.png) center center / cover no-repeat;
     }
 }

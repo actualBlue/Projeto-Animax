@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     overflow: hidden;
 
-    background: url(imagens/fundo-pc.png) center center / cover no-repeat;
+    background: url(../imagens/fundo-pc.png) center center / cover no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -116,6 +116,6 @@ button {
 
 @media (max-width: 768px) {
     body {
-        background: url(imagens/fundo-mobile.png) center center / cover no-repeat;
+        background: url(../imagens/fundo-mobile.png) center center / cover no-repeat;
     }
 }

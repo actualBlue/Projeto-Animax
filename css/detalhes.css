@@ -19,7 +19,6 @@
 
 html,
 body {
-    width: 100%;
     max-width: 100%;
 }
 
@@ -50,6 +49,8 @@ body {
 #animax {
     font-size: 27px;
     flex-shrink: 0;
+
+    font-weight: bolder;
 }
 
 .navegar > a {
@@ -495,16 +496,23 @@ div#divisaoo {
 }
 
 .area-baixo-pag {
-    width: min(1250px, 100%);
+    width: min(100%, 1250px);
     min-height: 770px;
     height: auto;
 
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 330px 624px 275px;
+    grid-template-columns: minmax(260px, 330px) minmax(0, 1fr) minmax(220px, 275px);
     gap: 10px;
+
     align-items: stretch;
+}
+
+section.dados, section.episodios, section.relacionados {
+    min-width: 0;
+    max-width: 100%;
+
 }
 
 /* Sessão episodios */
@@ -528,14 +536,14 @@ section.episodios {
 }
 
 section div.eps-header {
-    position: relative;
-    top: 5px;
-    left: 20px;
-    
     color: var(--branco);
 
     display: flex;
-    gap: 365px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 5px 14px 0;
 }
 
 section div.eps-header h2 {
@@ -585,7 +593,7 @@ div.eps-table-header {
 }
 
 #media {
-    margin-left: -138px;
+    margin-left: -148px;
 }
 
 #ratings {
@@ -1086,6 +1094,8 @@ button#like {
 
     .Cabeçalho {
         padding: 0 28px;
+
+        max-width: 100%;
     }
 
     .navegar {
@@ -1093,20 +1103,20 @@ button#like {
         padding: 18px 0;
 
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto minmax(220px, 1fr)auto;
         grid-template-areas:
             "logo search actions"
             "links links links";
 
         align-items: center;
-        gap: 22px 28px;
+        gap: 22px;
     }
 
     #animax {
         grid-area: logo;
 
-        font-size: 38px;
-        letter-spacing: 4px;
+        font-size: clamp(30px, 4vw, 42px);
+        letter-spacing: 6px;
         white-space: nowrap;
     }
 
@@ -1114,7 +1124,8 @@ button#like {
         grid-area: search;
 
         width: 100%;
-        max-width: 430px;
+        max-width: 420px;
+        min-width: 0;
         height: 48px;
 
         justify-self: center;
@@ -1122,6 +1133,7 @@ button#like {
 
     .search-box input {
         font-size: 18px;
+        min-width: 0;
     }
 
     .search-box button {
@@ -1133,16 +1145,21 @@ button#like {
 
         display: flex;
         justify-content: flex-end;
-        gap: 18px;
+        gap: 14px;
+
+        min-width: 0;
     }
 
     .nav-actions > a > .btn-login,
     .nav-actions > a > .btn-criar {
-        width: 120px;
+        width: clamp(130px, 12vw, 120px);
         height: 48px;
 
-        font-size: 20px;
+        font-size: 18px;
+
+        white-space: nowrap;
     }
+
 
     .nav-links {
         grid-area: links;
@@ -1191,20 +1208,20 @@ button#like {
     }
 
     div.content {
-        width: 100%;
-        max-width: 900px;
-        min-height: 200px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 200px;
 
-        margin: 0 auto;
+    margin: 0 auto;
 
-        position: relative;
+    position: relative;
 
-        display: grid;
-        grid-template-columns: 255px minmax(0, 1fr);
-        gap: 38px;
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr);
+    gap: 0 38px;
 
-        align-items: start;
-    }
+    align-items: start;
+}
 
     div.anime-img {
         position: static;
@@ -1301,82 +1318,146 @@ button#like {
     }
 
     .area-baixo {
-        width: 100%;
-        max-width: 650px;
+    grid-column: 1 / -1;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-    }
+    width: 100%;
+    max-width: 100%;
 
-    div.avaliacao {
-        position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 
-        color: var(--branco);
+    margin-top: 35px;
+}
 
-        display: flex;
-        align-items: center;
+/* AVALIAÇÃO */
+div.avaliacao {
+    position: static;
 
-        min-width: 330px;
-        flex-shrink: 0;
-    }
+    margin: 0;
 
-    div.avaliacao #nota {
-        font-size: 58px;
-        line-height: 1;
+    color: var(--branco);
 
-        color: var(--branco);
-    }
+    display: flex;
+    align-items: center;
 
-    div.avaliacao #nota-max {
-        font-size: 29px;
-        color: var(--cinza);
+    min-width: 0;
+    flex-shrink: 1;
 
-        position: relative;
-    }
+}
 
-    .texto-nota {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
+div.avaliacao #nota {
+    font-size: 50px;
+    line-height: 1;
 
-    div.avaliacao #overrall {
-        width: auto;
+    color: var(--branco);
 
-        color: var(--branco);
-        font-size: 20px;
-        line-height: 1.1;
-    }
+    margin-bottom: 130px;
+    
+}
 
-    div.avaliacao #ppl-nota {
-        width: auto;
+div.avaliacao #nota-max {
+    font-size: 24px;
 
-        color: var(--branco);
-        font-size: 17px;
-        line-height: 1.1;
-    }
+    color: var(--cinza);
 
-    div.botoes {
-        display: flex;
-        justify-content: flex-end;
+    margin-left: 6px;
+    margin-right: 16px;
+    margin-bottom: 135px;
 
-        flex-shrink: 0;
-    }
+    position: static;
+}
 
-    div.botoes > .btn-primario {
-        width: 215px;
-        height: 52px;
+.texto-nota {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 
-        font-size: 18px;
-    }
+    position: static;
+}
+
+div.avaliacao #overrall {
+    position: static;
+    margin-left: -122px;
+    margin-top: 0px;
+
+    width: auto;
+
+    color: var(--branco);
+    line-height: 1.1;
+}
+
+div.avaliacao #ppl-nota {
+    position: static;
+    margin-bottom: 0px;
+    margin-left: -122px;
+
+    width: auto;
+
+    color: var(--branco);
+    line-height: 1.1;
+}
+
+/* BOTÃO */
+div.botoes {
+    display: flex;
+    justify-content: flex-end;
+
+    flex-shrink: 0;
+}
+
+div.botoes > .btn-primario {
+    width: 200px;
+    height: 52px;
+
+    font-size: 18px;
+
+    margin-top: 40px;
+    margin-left: -10px;
+}
 
     #divisoria {
         display: none;
     }
+
+    section.dados #sobre {
+    margin: 0;
+    padding-top: 10px;
+
+    text-align: center;
+
+    color: var(--branco);
+    
+    font-weight: 700;
+}  
+
+    div#divisaoo {
+    height: 1px;
+    width: min(65%, 520px);
+
+    background-color: var(--cinza);
+
+    margin: 10px auto 24px;
+
+    position: static;
 }
 
+   .area-baixo-pag {
+        width: min(100%, 1200px);
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        
+        margin: 0 auto;
+    }
+
+    .recommended-card:hover {
+        transform: translateX(0);
+    }
+
+}
 
 /* Celular */
 
@@ -1393,7 +1474,7 @@ button#like {
     }
 
     .navegar {
-        width: 100%;
+       width: 100%;
         padding: 28px 35px 24px;
 
         display: flex;
@@ -1402,7 +1483,7 @@ button#like {
         justify-content: center;
 
         gap: 28px;
-    }
+    } 
 
     #animax {
         font-size: 50px;
@@ -1583,6 +1664,16 @@ button#like {
         text-align: center;
     }
 
+    .area-baixo {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+    }
+
     div.avaliacao {
         position: static;
 
@@ -1594,22 +1685,38 @@ button#like {
         width: 100%;
         max-width: 360px;
 
-        margin-bottom: 28px;
-
         color: var(--branco);
     }
 
     div.avaliacao #nota {
         font-size: 60px;
+        
+        line-height: 1;
+
+        margin: 0;
+
+        color: var(--branco);
     }
 
     div.avaliacao #nota-max {
-        font-size: 30px;
+    font-size: 30px;
 
-        margin-left: 6px;
-        margin-right: 0;
-        margin-top: 22px;
-    }
+    margin: 12px 0 0 6px;
+
+    color: var(--cinza);
+}
+
+.texto-nota {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    position: static;
+
+    margin-top: 20px;
+}
 
     div.avaliacao #overrall,
     div.avaliacao #ppl-nota {
@@ -1619,10 +1726,17 @@ button#like {
 
         font-size: 23px;
         text-align: center;
+        
     }
 
     div.avaliacao #overrall {
-        margin-top: 20px;
+        position: static;
+
+        width: 100%;
+
+        margin: 0;
+
+        font-size: 30px;
         font-weight: bold;
     }
 
@@ -1640,19 +1754,35 @@ button#like {
 
         width: 100%;
 
-        display: flex;
-        justify-content: center;
-    }
+        margin-left: 0px;
 
-    div.botoes > .btn-primario {
+
         width: 330px;
         height: 72px;
 
         font-size: 25px;
         border-radius: 10px;
     }
-}
 
+    .area-baixo-pag h2 {
+        text-align: center;
+    }
+
+    .area-baixo-pag {
+        width: min(100%, 1200px);
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        
+        margin: 0 auto;
+    }
+
+    .recommended-card:hover {
+        transform: translateX(0);
+    }
+
+}
 
 /* Celular pequeno */
 
@@ -1771,4 +1901,6 @@ button#like {
         height: 65px;
         font-size: 22px;
     }
+
+    
 }

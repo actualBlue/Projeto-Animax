@@ -46,6 +46,7 @@ body {
 
 #animax {
     font-size: 27px;
+    font-weight: bolder;
 }
 
 .navegar {
@@ -190,9 +191,11 @@ section.destaques::before {
     );
 
     z-index: 0;
+
+    pointer-events: none;
 }
 
-.section.destaques > * {
+section.destaques > * {
     position: relative;
     z-index: 1;
 }
@@ -641,7 +644,7 @@ div.anime-list-rate, .anime-list-simi, .anime-area-parecidos .anime-list-simi {
         gap: 14px;
     }
 
-    /* BANNER */
+
 
 /* BANNER MOBILE */
 

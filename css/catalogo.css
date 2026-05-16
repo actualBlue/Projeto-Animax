@@ -48,6 +48,7 @@ body {
 
 #animax {
     font-size: 27px;
+    font-weight: bolder;
 }
 
 .navegar {
@@ -510,7 +511,7 @@ div.filtros select {
 
     .nav-actions > a > .btn-login,
     .nav-actions > a > .btn-criar {
-        width: 112px;
+        width: 129px;
         height: 48px;
 
         font-size: 18px;
