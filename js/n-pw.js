@@ -8,7 +8,7 @@ botoesOlho.forEach((olho) => {
 
         olho.classList.toggle("fa-eye");
         olho.classList.toggle("fa-eye-slash");
-    });
+    })
 });
 
 window.addEventListener("load", () => {

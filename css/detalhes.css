@@ -1023,7 +1023,7 @@ div #btn-ver-mais,div #btn-ver-mais-eps {
 .comentario-texto {
     position: relative;
     top: 2px;
-    left: -110px;
+    left: -100px;
 
     width: 100%;
 
@@ -1421,7 +1421,7 @@ div.botoes > .btn-primario {
         display: none;
     }
 
-    section.dados #sobre {
+section.dados #sobre {
     margin: 0;
     padding-top: 10px;
 
@@ -1432,7 +1432,7 @@ div.botoes > .btn-primario {
     font-weight: 700;
 }  
 
-    div#divisaoo {
+div#divisaoo {
     height: 1px;
     width: min(65%, 520px);
 
@@ -1456,6 +1456,10 @@ div.botoes > .btn-primario {
     .recommended-card:hover {
         transform: translateX(0);
     }
+
+section.relacionados, section.episodios, section.dados, .comentarios {
+    border-radius: 0px;
+}
 
 }
 
@@ -1718,8 +1722,8 @@ div.botoes > .btn-primario {
     margin-top: 20px;
 }
 
-    div.avaliacao #overrall,
-    div.avaliacao #ppl-nota {
+div.avaliacao #overrall,
+div.avaliacao #ppl-nota {
         position: static;
 
         width: 100%;
@@ -1727,9 +1731,9 @@ div.botoes > .btn-primario {
         font-size: 23px;
         text-align: center;
         
-    }
+}
 
-    div.avaliacao #overrall {
+div.avaliacao #overrall {
         position: static;
 
         width: 100%;
@@ -1738,18 +1742,18 @@ div.botoes > .btn-primario {
 
         font-size: 30px;
         font-weight: bold;
-    }
+}
 
-    div.avaliacao #ppl-nota {
+div.avaliacao #ppl-nota {
         margin-top: 7px;
         font-size: 20px;
-    }
+}
 
-    #divisoria {
+#divisoria {
         display: none;
-    }
+}
 
-    div.botoes {
+div.botoes {
         position: static;
 
         width: 100%;
@@ -1762,13 +1766,13 @@ div.botoes > .btn-primario {
 
         font-size: 25px;
         border-radius: 10px;
-    }
+}
 
-    .area-baixo-pag h2 {
+.area-baixo-pag h2 {
         text-align: center;
-    }
+}
 
-    .area-baixo-pag {
+.area-baixo-pag {
         width: min(100%, 1200px);
 
         display: grid;
@@ -1776,11 +1780,29 @@ div.botoes > .btn-primario {
         gap: 10px;
         
         margin: 0 auto;
-    }
+}
 
-    .recommended-card:hover {
+.recommended-card:hover {
         transform: translateX(0);
-    }
+}
+
+section.dados #sobre {
+    margin: 0;
+
+    text-align: center;
+}  
+
+div#divisaoo {
+    width: min(65%, 520px);
+    
+    margin: 10px auto 24px;
+
+    position: static;
+}
+
+section.relacionados, section.episodios, section.dados, .comentarios {
+    border-radius: 0px;
+}
 
 }
 
@@ -1842,6 +1864,10 @@ div.botoes > .btn-primario {
         height: 72px;
         font-size: 25px;
     }
+
+    section.relacionados, section.episodios, section.dados, .comentarios {
+    border-radius: 0px;
+}
 }
 
 
@@ -1902,5 +1928,12 @@ div.botoes > .btn-primario {
         font-size: 22px;
     }
 
+section.relacionados, section.episodios, section.dados, .comentarios {
+    border-radius: 0px;
+}
+
+.comentario-texto {
+    width: 100px;
+}
     
 }
