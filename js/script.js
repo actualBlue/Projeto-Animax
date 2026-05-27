@@ -26,7 +26,8 @@ async function  carregarAnimesDestaques() {
                 titulo: anime.title,
                 ano: anime.year || "N/A",
                 idade: anime.rating || "N/A",
-                episodios: anime.score ? `${anime.score}/10` : "N/A",
+                episodios: anime.episodes || "N/A",
+                avaliacao: anime.score ? `${anime.score}/10` : "N/A",
                 generos: anime.genres.map(function(genero) {
                     return genero.name;
                 }),
@@ -88,32 +89,6 @@ const launchList = document.querySelector("#launch-list");
 const ratedList = document.querySelector("#rate-list");
 const parecidosList = document.querySelector("#parecidos-list");
 
-for (let i = 1; i <= 5; i++) {
-    trendingList.innerHTML += `
-        <div class="anime-card-trending">
-        
-        </div>
-        
-    `;
-}
-
-for (let i = 1; i <= 5; i++) {
-    launchList.innerHTML += `
-        <div class="anime-card-launch"></div>
-    `;
-}
-
-for (let i = 1; i <= 4; i++) {
-    ratedList.innerHTML += `
-        <div class="anime-card-rated"></div>
-    `;
-}
-
-for (let i = 1; i <=4; i++) {
-    parecidosList.innerHTML += `
-        <div class="anime-card-simi"></div>
-    `;
-}
 
 /* SETAS PROXIMO E ANTERIOR */
 
@@ -198,3 +173,103 @@ searchInput.addEventListener("keydown", (evento) => {
         irParaCatalogo()
     }
 });
+
+async function carregarCategoria(url, lista, classeCard) {
+
+    lista.innerHTML = `
+    <p class="mensagem-api"> Loading animes...</p>
+    `;
+    
+    try {
+        const resposta = await fetch(url);
+
+        if (resposta.status === 429) {
+            lista.innerHTML = `
+            <p class=mensagem-api>
+                Too many requests. Please try again in a few seconds.
+            </p>
+            `;
+            return
+        }
+
+        const dados = await resposta.json();
+
+        lista.innerHTML = "";
+
+        const listaAnimes = lista === parecidosList
+            ? dados.data.slice(0,4)
+            : dados.data;
+
+            if (listaAnimes.length === 0) {
+                lista.innerHTML = `
+                <p class="mensagem-api">
+                No one recommendation founded
+                </p>
+                `;
+                return
+            }
+
+        listaAnimes.forEach((anime) => {
+
+            const item = anime.entry ? anime.entry[0] : anime;
+
+            lista.innerHTML += `
+            <div class="${classeCard}" onclick="abrirDetalhes(${item.mal_id})">
+                <img src="${item.images.jpg.large_image_url}">
+                
+                <div class="card-info">
+                    <h3>${item.title}</h3>
+                    <p>${item.score || "N/A"}</p>
+                </div>
+
+            </div>
+        `;
+        });
+    
+    } catch(erro) {
+
+        lista.innerHTML = `
+        <p class="mensagem-api>
+        Failed to load animes
+        </p>`
+        console.log(erro)
+    }
+}
+
+function esperar(ms) {
+    return new Promise(resolve => setTimeout(resolve,ms));
+}
+
+    async function carregarTudo() {
+    // Trending
+
+     await carregarCategoria(
+        "https://api.jikan.moe/v4/top/anime?limit=5", trendingList, "anime-card-trending"
+    );
+
+    await esperar(500);
+
+    // Releases
+
+    await carregarCategoria(
+        "https://api.jikan.moe/v4/seasons/now?limit=5", launchList, "anime-card-launch"
+    );
+
+    await esperar(500);
+
+    // Highest Rated
+
+    await carregarCategoria(
+        "https://api.jikan.moe/v4/top/anime?type=movie&limit=4", ratedList, "anime-card-rated"
+    );
+
+    await esperar(500);
+
+    // Similar
+
+    await carregarCategoria(
+        "https://api.jikan.moe/v4/recommendations/anime?limit=4", parecidosList, "anime-card-simi"
+    );
+}
+
+carregarTudo();
