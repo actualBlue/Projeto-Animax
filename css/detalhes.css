@@ -593,15 +593,17 @@ div.eps-table-header {
 }
 
 #media {
-    margin-left: -148px;
+    margin-left: -139px;
 }
 
 #ratings {
-    margin-left: 58px;
+    position: relative;
+    left: 33px;
 }
 
 #action {
-    margin-left: 50px;
+    position: relative;
+    left: 73px;
 }
 
 .eps-row {
@@ -670,11 +672,11 @@ div#lista-eps {
 }
 
 .ep-media {
-    margin-left: 30px;
+    text-align: center;
 }
 
 .ep-ratings {
-    margin-left: 43px;
+    text-align: center;
 }
 
 .botao-rate {
@@ -694,6 +696,136 @@ div#lista-eps {
 .botao-rate:hover {
     color: var(--preto);
     background-color: var(--branco);
+}
+
+.avaliar {
+    width: 500px;
+    height: fit-content;
+
+    margin: auto;
+
+    border: none;
+
+    background-color: var(--cinzafundo);
+    border-radius: 3%;
+    border: 1px solid var(--branco);
+
+    
+}
+
+#imagem-modal {
+    width: 100%;
+    max-height: 150px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+#ep-desc {
+    margin-top: 10px;
+    margin-left: 12px;
+    color: var(--cinza);
+    font-weight: 600;
+
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+#ver-mais {
+    background: none;
+    border: none;
+
+    color: var(--branco);
+
+    cursor: pointer;
+
+    font-weight: 600;
+    text-decoration: underline;
+
+    display: inline;
+    padding: 0;
+    margin-left: 13px;
+}
+
+#irate {
+    background-color: var(--preto);
+    width: 80px;
+    height: 40px;
+
+    border: none;
+    border-radius: 4px;
+    border: 1px solid var(--cinza);
+
+
+    cursor: text;
+
+    color: var(--branco);
+
+    text-align: center;
+
+    transition: calc(0.2s);
+}
+
+#irate:hover, #send-rate:hover, #fechar:hover {
+    background-color: var(--branco);
+    color: var(--cinzafundo);
+}
+
+.form-rate {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+
+    margin-top: 15px;
+}
+
+#fechar {
+    background-color: var(--preto);
+    width: 150px;
+    height: 40px;
+
+    border: none;
+    border-radius: 4px;
+    border: 1px solid var(--cinza);
+
+    margin-top: 20px;
+
+    cursor: text;
+
+    color: var(--branco);
+
+    text-align: center;
+    
+
+    cursor: pointer;
+
+     transition: calc(0.2s);
+}
+
+#send-rate {
+    background-color: var(--preto);
+    width: 100px;
+    height: 40px;
+
+    border: none;
+    border-radius: 4px;
+    border: 1px solid var(--cinza);
+
+    color: var(--branco);
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.final-modal {
+    text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Botoes páginas */

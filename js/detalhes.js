@@ -1,11 +1,14 @@
 const params = new URLSearchParams(window.location.search);
 const id = Number(params.get("id"));
+let animeAtual = null;
 
 async function carregarDetalhes() {
+    
     try {
         const resposta = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`);
         const dados = await resposta.json();
         const anime = dados.data;
+        animeAtual = anime;
 
         carregarParecidos(anime);
 
@@ -201,7 +204,97 @@ function mostrarEpisodios() {
             </div>
         `;
     });
+
+const modal = document.querySelector(".avaliar");
+
+modal.addEventListener("click", (event) => {
+const rect = modal.getBoundingClientRect();
+
+const clicouFora =
+    event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom;
+
+    if (clicouFora) {
+        modal.close();
+        document.body.style.overflow = "auto";
+    }
+});
+
+document.querySelectorAll(".botao-rate").forEach(botao => {
+    botao.addEventListener("click", async () => {
+        
+        const numeroEpisodio = botao.dataset.episode;
+
+        const resposta = await fetch (
+            `https://api.jikan.moe/v4/anime/${id}/episodes/${numeroEpisodio}`
+        );
+
+        const dados = await resposta.json();
+        const episodio = dados.data;
+
+        const imagemAnime = document.querySelector(".anime-img img").src;
+
+        const sinopseCurta = episodio.synopsis?.length > 370
+        ? episodio.synopsis.slice(0, 370) + "..."
+        : episodio.synopsis;
     
+        const sinopseCompleta = episodio?.synopsis || "No description avaliable"
+
+    modal.innerHTML = `
+
+    <img src="${imagemAnime}" alt="Imagem anime" id="imagem-modal">
+    <h2>${episodio.title}</h2>
+    <p id="ep-desc">${sinopseCurta}</p>
+
+    ${
+        sinopseCompleta.length > 370
+        ? '<button id= "ver-mais" type="button">Read more</button>'
+        :""
+    }
+
+    <div class="final-modal">
+
+        <form action="" class="form-rate">
+        <label for="irate""></label>
+        <input type="number" name="rate" id="irate" min="0" max="10" step="0.1" required></input>
+        <button type="submit" id="send-rate">Rate Episode</button>
+        
+        </form>
+        <button id="fechar" type="button">Close</button>
+    </div>
+
+`;
+const sinopse = document.getElementById("ep-desc");
+const btnVerMais = document.getElementById("ver-mais");
+
+if (btnVerMais) {
+    let expandido = false;
+
+    btnVerMais.addEventListener("click", () => {
+
+        if (!expandido) {
+            sinopse.textContent = sinopseCompleta;
+            btnVerMais.textContent = "Read less";
+
+        } else {
+            sinopse.textContent = sinopseCurta;
+            btnVerMais.textContent = "Read more";
+        }
+
+        expandido = !expandido;
+    });
+}
+
+document.getElementById("fechar").addEventListener("click", () =>{
+    modal.close();
+    document.body.style.overflow = "auto";
+});
+    modal.showModal();
+    document.body.style.overflow = "hidden";
+    });
+});
         inputPagina.value = paginaAtual;
 
         btnAnterior.disabled = paginaAtual === 1;
@@ -243,6 +336,7 @@ async function carregarParecidos(animeAtual) {
         .join(",");
 
     const resposta = await fetch(`https://api.jikan.moe/v4/anime?genres=${generosIds}&order_by=score&sort=desc&limit=6`);
+
     const dados = await resposta.json();
 
      if (!dados.data) {
@@ -295,4 +389,5 @@ searchInput.addEventListener("keydown", (evento) => {
         irParaCatalogo()
     }
 });
+
 

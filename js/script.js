@@ -257,7 +257,7 @@ function esperar(ms) {
 
     await esperar(500);
 
-    // Highest Rated
+    // Highest Rated Movie
 
     await carregarCategoria(
         "https://api.jikan.moe/v4/top/anime?type=movie&limit=4", ratedList, "anime-card-rated"

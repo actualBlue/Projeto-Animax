@@ -419,6 +419,7 @@ div.anime-list {
     
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
     gap: 16px;
 
     border-radius: 5px;
@@ -434,11 +435,11 @@ div.anime-list {
     border-radius: 5px;
 
     position: relative;
-    overflow: hidden;
 
     cursor: pointer;
 
     transition: calc(0.2s);
+
 }
 
 .anime-card-trending:hover, .anime-card-launch:hover, .anime-card-rated:hover, .anime-card-simi:hover  {
